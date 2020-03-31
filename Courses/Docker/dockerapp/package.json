@@ -3,7 +3,13 @@
     "version": "1.0.0",
     "description": "Node.js on Docker",
     "author": "cessareoo",
+    "license": "UNLICENSED",
+    "private": true,
     "main": "server.js",
+    "repository": {
+        "type": "git",
+        "url":"https://github.com/cessareoo/Learning.git"
+    },
     "scripts": {
         "start": "node server.js"
     },
