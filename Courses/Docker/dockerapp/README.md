@@ -1,8 +1,6 @@
 # Docker images
 
-Practice of build and run docker image
-
-<a href="https://www.udemy.com/share/101DrYB0MbcFtVQHs=/">Udemy Docker course</a>
+**Description:** Practice of build and run docker image
 
 Own dockerapp based on:
 <a href="https://nodejs.org/fr/docs/guides/nodejs-docker-webapp/">Dockerizing a Node.js web app</a>
