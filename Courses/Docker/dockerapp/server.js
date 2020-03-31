@@ -12,4 +12,5 @@ app.get('/', (req, res) =>{
 });
 
 app.listen(port, host);
-console.log(`Runnig on http://${host}:${port}`);
+
+console.log(`Server running container port ${port}`);

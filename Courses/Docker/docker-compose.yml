@@ -1,0 +1,7 @@
+version: "3.0"
+services: 
+  dockerapp:
+    build: ./dockerapp/ #directory Dockerfile build image
+    ports: 
+      - "4040:8080" # host port: container port
+    #depends_on: if exist a dependencies

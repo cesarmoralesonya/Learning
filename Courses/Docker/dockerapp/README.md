@@ -1,6 +1,6 @@
-# Docker course
+# Docker images
 
-Practice of Docker course
+Practice of build and run docker image
 
 <a href="https://www.udemy.com/share/101DrYB0MbcFtVQHs=/">Udemy Docker course</a>
 
