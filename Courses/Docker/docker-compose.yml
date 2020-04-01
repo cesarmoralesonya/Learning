@@ -5,3 +5,8 @@ services:
     ports: 
       - "4040:8080" # host port: container port
     #depends_on: if exist a dependencies
+    networks: 
+      - my_net
+networks: 
+  my_net:
+    driver: bridge
