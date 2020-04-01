@@ -5,16 +5,35 @@
 Own dockerapp based on:
 <a href="https://nodejs.org/fr/docs/guides/nodejs-docker-webapp/">Dockerizing a Node.js web app</a>
 
-To build docker image it's necessary run the next command:
+Build docker image it's necessary run the next command:
 
 ```poweshell
 docker build -t <username>/<docker-image-name> .
 ```
 
-To run docker image run the next command:
+Watch the layers of docker image run the next command:
 
 ```powershell
-docker run -p <Port>:<Docker port exposed> -d <username>/<docker-image-name>
+docker history <REPOSITORY>
+```
+
+Execute image in container run the next command:
+
+```powershell
+docker run -p <Host Port>:<Container port exposed> -d <username>/<docker-image-name>
+```
+
+Change image tag:
+
+```powershell
+docker tag <IMAGE ID> <USER NAME>/<IMAGE NAME>:<TAG>
+```
+
+Update image to docker-hub to share the image or deploy in production:
+
+```powershell
+docker login --username=<USER NAME>
+docker push <REPOSITORY>:<TAG>
 ```
 
 ## Aux commands
@@ -25,13 +44,13 @@ List all images used:
 docker images -a
 ```
 
-remove a image
+Remove a image
 
 ```powershell
 docker image <IMAGE ID>
 ```
 
-remove all images:
+Remove all images:
 
 ```powershell
 docker rmi $(docker images -a -q)
