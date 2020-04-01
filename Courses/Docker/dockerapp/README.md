@@ -62,6 +62,12 @@ List all containers:
 docker ps -a
 ```
 
+Execute a linux container:
+
+```powershell
+docker exect -it <CONTAINER ID> bin/bash
+```
+
 Stop container:
 
 ```powershell
