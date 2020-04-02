@@ -7,10 +7,10 @@ COPY package*.json ./
 RUN npm install
 
 #Bundle app's source
-COPY . ./
+COPY ./ ./
 
 #Container expose port
-EXPOSE 8080
+EXPOSE 6050
 
 #Run app
 CMD [ "node", "server.js" ]

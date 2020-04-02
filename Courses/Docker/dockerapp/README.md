@@ -8,25 +8,25 @@ Own dockerapp based on:
 Build docker image it's necessary run the next command:
 
 ```poweshell
-docker build -t <username>/<docker-image-name> .
+docker build -t <USERNAME>/<DOCKER-IMAGE-NAME>:<VERSION> .
 ```
 
 Watch the layers of docker image run the next command:
 
 ```powershell
-docker history <REPOSITORY>
+docker history <USERNAME>/<DOCKER-IMAGE-NAME>:<VERSION>
 ```
 
 Execute image in container run the next command:
 
 ```powershell
-docker run -p <Host Port>:<Container port exposed> -d <username>/<docker-image-name>
+docker run -p <HOST-PORT>:<CONTAINER-EXPOSED-PORT> -d <USERNAME>/<DOCKER-IMAGE-NAME>:<VERSION>
 ```
 
-Change image tag:
+Change image tag/version if neccesary:
 
 ```powershell
-docker tag <IMAGE ID> <USER NAME>/<IMAGE NAME>:<TAG>
+docker tag <IMAGE ID> <USER NAME>/<IMAGE NAME>:<VERSION>
 ```
 
 Update image to docker-hub to share the image or deploy in production:
@@ -38,16 +38,16 @@ docker push <REPOSITORY>:<TAG>
 
 ## Aux commands
 
-List all images used:
+List all images:
 
 ```poweshell
 docker images -a
 ```
 
-Remove a image
+Remove a image:
 
 ```powershell
-docker image <IMAGE ID>
+docker rmi -f <IMAGE ID>
 ```
 
 Remove all images:
