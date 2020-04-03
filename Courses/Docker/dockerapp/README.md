@@ -29,11 +29,11 @@ Change image tag/version if neccesary:
 docker tag <IMAGE ID> <USER NAME>/<IMAGE NAME>:<VERSION>
 ```
 
-Update image to docker-hub to share the image or deploy in production:
+Update image to docker-hub to share the image or deploy in production, example: deploy on kubernetes:
 
 ```powershell
 docker login --username=<USER NAME>
-docker push <REPOSITORY>:<TAG>
+docker push <USERNAME>/<IMAGE-NAME>:<TAG>
 ```
 
 ## Aux commands
