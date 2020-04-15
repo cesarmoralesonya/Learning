@@ -1,0 +1,77 @@
+---
+title: "Other-graphics"
+author: "Cesar"
+date: "15/4/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r cars}
+summary(mtcars)
+```
+## Dot plot
+
+```{r}
+dotchart(mtcars$mpg, labels = row.names(mtcars),cex = .7, 
+         main = "Gas milage for car models", xlab = "miles per gallon")
+```
+## Scaterplot
+
+```{r}
+attach(mtcars)
+plot(wt, mpg, main = "Scartterplot example", xlab = "Car weight", ylab = "Miles per gallon", pch = 19)
+abline(lm(mpg~wt), col = "red")
+lines(lowess(wt, mpg),  col = "blue")
+```
+
+```{r}
+attach(mtcars)
+library(car) 
+scatterplot(mpg ~ wt | cyl, data=mtcars, 
+  	xlab="Weight of Car", ylab="Miles Per Gallon", 
+   main="Enhanced Scatter Plot") 
+   labels=row.names(mtcars)
+```
+
+## Scarterplot matrix
+
+```{r}
+attach(mtcars)
+
+pairs(~mpg+disp+drat+wt,data=mtcars, 
+   main="Scatterplot Matrix")
+```
+
+## Ggplot2
+
+```{r}
+library(MASS)
+summary(mammals)
+```
+### explore relations
+
+```{r}
+library(ggplot2)
+
+ggplot(mammals, aes(x = body, y = brain)) + geom_point()
+```
+
+### explore relations adding functions
+
+```{r}
+library(ggplot2)
+
+ggplot(mammals, aes(x = body, y=brain)) + geom_point() + stat_smooth(method = "lm", col="red", se = FALSE)
+```
+
+### focusing in a segment
+
+```{r}
+library(ggplot2)
+
+
+ggplot(mammals, aes(x = body, y=brain)) + geom_point() + coord_fixed() + scale_x_log10() + scale_y_log10() + stat_smooth(method = "lm", col="#C42126", se = FALSE, size=1)
+```

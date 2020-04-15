@@ -1,0 +1,60 @@
+---
+title: "histograms"
+author: "Cesar"
+date: "15/4/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r cars}
+summary(mtcars)
+```
+
+---
+## Simple histogram
+
+```{r cars}
+hist(mtcars$mpg)
+```
+---
+
+## customisation histogram
+
+```{r}
+hist(mtcars$mpg, breaks = 12, col = "red")
+```
+---
+## Superposition a normal curve centred in the average
+
+```{r}
+x <- mtcars$mpg
+
+h <- hist(x, breaks = 10, col = "red", xlab = "Miles per gallon", main = "Histogram with normal curve")
+xfit <- seq(min(x), max(x), length = 40)
+yfit <- dnorm(xfit, mean = mean(x), sd = sd(x))
+yfit <- yfit*diff(h$mids[1:2])*length(x)
+lines(xfit, yfit, col = "blue", lwd = 2)
+```
+
+## Increment the number of partitions
+data doesn't fit normal curve because histogram depends of the partition number
+
+```{r}
+x <- mtcars$mpg
+
+h <- hist(x, breaks = 20, col = "red", xlab = "Miles per gallon", main = "Histogram with normal curve")
+xfit <- seq(min(x), max(x), length = 40)
+yfit <- dnorm(xfit, mean = mean(x), sd = sd(x))
+yfit <- yfit*diff(h$mids[1:2])*length(x)
+lines(xfit, yfit, col = "blue", lwd = 2)
+```
+
+## Density plots
+
+```{r}
+d <- density(mtcars$mpg)
+plot(d)
+```
