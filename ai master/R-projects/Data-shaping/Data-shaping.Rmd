@@ -1,0 +1,30 @@
+---
+title: "Data shaping"
+author: "Cesar"
+date: "15/4/2020"
+output: html_document
+---
+
+---
+# load dataset
+---
+
+```{r}
+setwd(getwd())
+file_path<- file.path("datasetS","dataset-batallas-capitanes.csv")
+datos_raw <- read.csv(file_path, sep = ";", stringsAsFactors = FALSE, dec = ",")
+df_datos_raw <-data.frame(datos_raw)
+
+datos_narrow <- df_datos_raw
+datos_narrow
+```
+
+---
+# shape
+---
+
+```{r}
+library("reshape2")
+datos_wide <- dcast(datos_narrow, capitan ~ enemigo)
+head(datos_wide)
+```
